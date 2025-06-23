@@ -2,15 +2,14 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 
 import { useState } from "react";
 import Sidebar from "./SideBar";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const MobileMenu = () => <Sidebar setIsOpen={setIsOpen} open={isOpen} />;
 
   const closeSidebar = () => {
     setIsOpen(false);
@@ -21,41 +20,60 @@ const Navbar = () => {
   };
 
   return (
-    <nav className=" w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60  top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-end">
+    <nav className=" w-full  bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60  top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+        <div className="flex justify-between h-24 items-end ">
           {/* Logo/Brand */}
-          <div className="flex-shrink-0 flex  items-center gap-2">
+          <div className="flex gap-8">
             <Link
               href="/"
               className="text-3xl font-bold text-primary hover:text-primary/80 transition-colors"
             >
-              Techpool X
+              <Image
+                height={150}
+                width={150}
+                src={
+                  "https://cdn.prod.website-files.com/61800161ed9edf6bdd5c6c4d/62d80ee516e45986ef20f689_logo-techpool-x-webflow-template.svg"
+                }
+                alt="Techpool Logo"
+              />{" "}
             </Link>
+            <div className="lg:flex gap-4 hidden text-xl font-medium">
+              <h2>Home</h2>
+              <h2>About</h2>
+              <h2>Pricing</h2>
+              <h2>Pages</h2>
+              <h2>Cart(0)</h2>
+            </div>
           </div>
-
-          <div className=" md:hidden flex items-center gap-4">
-            {isOpen ? (
-              <Button variant={"default"} onClick={closeSidebar}>
-                <X className="font-bold" />
-              </Button>
-            ) : (
-              <Button
-                size={"icon"}
-                variant={"default"}
-                className="p-2"
-                onClick={openSidebar}
-              >
-                <Menu size={88} strokeWidth={3} />
-              </Button>
-            )}
-            <div>
-              <div className="absolute h-full left-0 top-16 w-full ease-in-out slide-in-from-left slide-out-to-left right-0 bottom-0">
-                {isOpen && <MobileMenu />}
-              </div>
+          <div className="flex gap-4 items-center">
+            <h2 className="text-gray-800 text-xl lg:hidden">Cart(0)</h2>
+            <Button className="p-3 lg:p-4 hidden md:flex">
+              Get Started{" "}
+              <span>
+                <ArrowRight />
+              </span>
+            </Button>
+            <div className=" lg:hidden flex items-center  gap-x-4">
+              {isOpen ? (
+                <Button className="px-8 py-3" onClick={closeSidebar}>
+                  <X size={88} strokeWidth={3} className="font-bold" />
+                </Button>
+              ) : (
+                <Button
+                  variant={"default"}
+                  className="px-6 py-3"
+                  onClick={openSidebar}
+                >
+                  <Menu size={88} strokeWidth={3} />
+                </Button>
+              )}
             </div>
           </div>
         </div>
+      </div>
+      <div className="fixed h-[100vh] left-0 top-16 w-full ease-in-out slide-in-from-left slide-out-to-left right-0 bottom-0">
+        {<Sidebar setIsOpen={setIsOpen} open={isOpen} />}
       </div>
     </nav>
   );

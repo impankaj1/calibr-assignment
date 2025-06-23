@@ -1,0 +1,16 @@
+export const menuOptions = [
+  "Sales home",
+  "Home",
+  "About",
+  "Pricing",
+  "Pricing single",
+  "Features",
+  "Contact",
+  "Blog",
+  "Blog post",
+  "Careers",
+  "Careers single",
+  "Integrations",
+  "Integrations Single",
+  "Coming Soon",
+];
