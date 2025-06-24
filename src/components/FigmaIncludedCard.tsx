@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 
 const FigmaIncludedCard = () => {
   return (
-    <div className="outline rounded-xl shadow-lg outline-gray-400">
+    <div className=" rounded-xl shadow-lg flex flex-col lg:flex-row ">
       <div className="p-8">
         <Image
           src="https://cdn.prod.website-files.com/61800161ed9edf6bdd5c6c4d/62d8570c330928d93d285dec_figma-file-included-logo-techpool-x-webflow-template.svg"
@@ -42,7 +42,7 @@ const FigmaIncludedCard = () => {
           className="object-cover w-[500px] h-[500px]
     sm:w-[600px] sm:h-[600px]
     md:w-[800px] md:h-[600px]
-    lg:w-[650px] lg:h-[650px] xl:w-[700px] xl:h-[700px]"
+    lg:w-[650px] lg:h-[650px] xl:w-[700px] xl:h-[400px]"
         />
       </div>
     </div>

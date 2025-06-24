@@ -6,8 +6,6 @@ import {
   useScroll,
   useTransform,
   useSpring,
-  useMotionValue,
-  useVelocity,
 } from "framer-motion";
 import React from "react";
 
@@ -45,7 +43,7 @@ const ParallaxImageRows: React.FC = () => {
   const secondRowX = useTransform(smoothProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <div className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-[90h] my-5 overflow-hidden">
+    <div className="relative  h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-[90h] 2xl:h-[100vh] my-5 overflow-hidden">
       {/* First Row - Moving Left */}
       <div className="absolute inset-0 flex flex-col z-0">
         <div className="h-2/6 md:h-1/6 bg-white" />
@@ -59,7 +57,7 @@ const ParallaxImageRows: React.FC = () => {
         {[...imagesRow1, ...imagesRow1].map((src, index) => (
           <motion.div
             key={index}
-            whileHover={{ scale: 1.05, rotate: 2 }}
+            whileHover={{ scale: 1.02, rotate: 2 }}
             transition={{ type: "spring", stiffness: 300 }}
             className="rounded-xl overflow-hidden shadow-lg"
           >
@@ -86,7 +84,7 @@ const ParallaxImageRows: React.FC = () => {
         {[...imagesRow2, ...imagesRow2].map((src, index) => (
           <motion.div
             key={index}
-            whileHover={{ scale: 1.05, rotate: -2 }}
+            whileHover={{ scale: 1.02, rotate: -2 }}
             transition={{ type: "spring", stiffness: 300 }}
             className="rounded-xl overflow-hidden shadow-lg"
           >

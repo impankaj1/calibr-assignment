@@ -6,16 +6,16 @@ import type { ReactNode } from "react";
 
 interface ScrollRevealProps {
   children: ReactNode;
-  yOffset?: number; 
-  duration?: number; 
-  delay?: number; 
+  yOffset?: number;
+  duration?: number;
+  delay?: number;
 }
 
 const ScrollReveal = ({
   children,
   yOffset = 40,
   duration = 0.7,
-  delay = 0,
+  delay = 0.1,
 }: ScrollRevealProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });

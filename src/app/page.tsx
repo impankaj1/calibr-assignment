@@ -1,3 +1,5 @@
+"use client";
+
 import AllTemplateCard from "@/components/AllTemplateCard";
 import BuyTemplateButton from "@/components/BuyTemplateButton";
 import FigmaIncludedCard from "@/components/FigmaIncludedCard";
@@ -52,7 +54,7 @@ export default function Home() {
       <div className="w-[100vw]">
         <ParallaxImageRows />
       </div>
-      <div className="py-20 outline">
+      <div className="py-20">
         <ScrollReveal>
           <h2 className="text-3xl md:text-4xl font-semibold md:font-bold px-6 text-center ">
             What is included in Techpool X
@@ -95,7 +97,7 @@ export default function Home() {
               </p>
             </ScrollReveal>
           </div>
-          <div className="space-y-6 md:grid grid-cols-2 gap-6">
+          <div className="space-y-6 md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {mainPageSection.map((section, idx) => {
               return (
                 <ScrollReveal key={section.src} delay={0.05 * idx}>
@@ -125,7 +127,7 @@ export default function Home() {
               </p>
             </ScrollReveal>
           </div>
-          <div className="space-y-6 md:grid md:grid-cols-2 gap-6">
+          <div className="space-y-6 md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {utilityPageSections.map((section, idx) => {
               return (
                 <ScrollReveal key={section.src} delay={0.05 * idx}>
@@ -150,11 +152,11 @@ export default function Home() {
               </h2>
             </ScrollReveal>
           </div>
-          <div className="space-y-6">
+          <div className="space-y-6 ">
             {Templates.map((template, idx) => (
               <ScrollReveal key={idx} delay={0.5}>
                 <TemplateCard
-                  key={template.header}
+                  idx={idx}
                   header={template.header}
                   description={template.description}
                 />
@@ -163,12 +165,12 @@ export default function Home() {
           </div>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="m-4 md:m-0">
+          <div className="m-4 md:m-0 h-full ">
             <ScrollReveal delay={0.2}>
               <WebflowCard />
             </ScrollReveal>
           </div>
-          <div className="m-4 md:m-0">
+          <div className="m-4 md:m-0 ">
             <ScrollReveal delay={0.2}>
               <AllTemplateCard />
             </ScrollReveal>
