@@ -13,17 +13,19 @@ const TemplateCard = (props: TemplateCardProps) => {
     <div className="space-y-6 ">
       <Template header={header} description={description} />
       {header === "Custom Icon Set" ? (
-        <div className="mt-6 mb-12">
+        <div className="mt-6 mb-12 md:flex items-center justify-between ">
           <BuyTemplateButton />
-          <Button
-            className="p-4 text-xl w-full font-normal"
-            variant={"outline"}
-          >
-            View icon font
-          </Button>
+          <div className=" w-full md:flex items-center">
+            <Button
+              className="p-4 md:p-6 text-xl my-8 w-full md:w-fit "
+              variant={"outline"}
+            >
+              View icon font
+            </Button>
+          </div>
         </div>
       ) : (
-        <div className="mt-6 mb-12">
+        <div className="mt-6 mb-12 md:flex ">
           <BuyTemplateButton />
         </div>
       )}

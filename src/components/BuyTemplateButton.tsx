@@ -3,12 +3,14 @@ import { Button } from "./ui/button";
 
 const BuyTemplateButton = () => {
   return (
-    <Button className="p-4 text-xl w-full my-8">
-      Buy Template{" "}
-      <span>
-        <ArrowRight />
-      </span>
-    </Button>
+    <div className=" w-full md:flex justify-center items-center my-8">
+      <Button className="p-4 md:p-6 text-xl w-full md:w-fit">
+        Buy Template{" "}
+        <span>
+          <ArrowRight />
+        </span>
+      </Button>
+    </div>
   );
 };
 

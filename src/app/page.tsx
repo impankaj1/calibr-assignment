@@ -5,7 +5,6 @@ import Footer from "@/components/Footer";
 import IncludedSection from "@/components/IncludedSection";
 import ParallaxImageRows from "@/components/ParallelImages";
 import SubscribeNewsLetter from "@/components/SubcribeNewsLetter";
-import Template from "@/components/Template";
 import { Button } from "@/components/ui/button";
 import WebflowCard from "@/components/WebflowCard";
 import { followOptions } from "@/content/FollowOptions";
@@ -53,21 +52,21 @@ export default function Home() {
       <div className="w-[100vw]">
         <ParallaxImageRows />
       </div>
-      <div className="my-10">
+      <div className="py-20 outline">
         <ScrollReveal>
-          <h2 className="text-3xl font-semibold px-6 text-center ">
+          <h2 className="text-3xl md:text-4xl font-semibold md:font-bold px-6 text-center ">
             What is included in Techpool X
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <p className="text-lg text-gray-500 text-center my-5 px-6">
+          <p className="text-lg text-gray-600 text-center my-5 px-6 md:px-20">
             <span className="font-semibold">Techpool X Webflow </span>Template
             includes over{" "}
             <span className="font-semibold">16 pages in total</span>, with more
             than <span className="font-semibold">50 section.</span>
           </p>
         </ScrollReveal>
-        <div className="space-y-6 m-4">
+        <div className="space-y-6 m-4 md:m-0 md:grid grid-cols-3 gap-6">
           {includedSections.map((section, idx) => {
             return (
               <ScrollReveal key={section.src} delay={0.05 * idx}>
@@ -80,23 +79,23 @@ export default function Home() {
             );
           })}
         </div>
-        <div className="m-4">
+        <div className="m-4 pb-20 md:m-0">
           <FigmaIncludedCard />
           <BuyTemplateButton />
         </div>
-        <div className="bg-neutral-200/40 p-4">
+        <div className="bg-neutral-200/40 p-4 md:p-0">
           <div className="flex flex-col pt-20 items-center justify-center gap-6 pb-6 px-6">
             <ScrollReveal>
-              <h2 className="text-3xl font-semibold">Main Page</h2>
+              <h2 className="text-3xl md:text-5xl font-semibold">Main Page</h2>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <p className="text-lg text-center text-gray-500">
+              <p className="text-lg md:text-xl text-center text-gray-500">
                 Take a look at the main pages included in the Techpool X
                 Template
               </p>
             </ScrollReveal>
           </div>
-          <div className="space-y-6 ">
+          <div className="space-y-6 md:grid grid-cols-2 gap-6">
             {mainPageSection.map((section, idx) => {
               return (
                 <ScrollReveal key={section.src} delay={0.05 * idx}>
@@ -112,19 +111,21 @@ export default function Home() {
             <BuyTemplateButton />
           </div>
         </div>
-        <div className=" p-4">
+        <div className=" p-4 md:p-0">
           <div className="flex flex-col pt-20 items-center justify-center gap-6 pb-6 px-6">
             <ScrollReveal>
-              <h2 className="text-3xl font-semibold">Utility Page</h2>
+              <h2 className="text-3xl md:text-5xl font-semibold">
+                Utility Page
+              </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <p className="text-lg text-center text-gray-500">
+              <p className="text-lg md:text-xl text-center text-gray-500">
                 Take a look at the Utility pages included in the Techpool X
                 Template
               </p>
             </ScrollReveal>
           </div>
-          <div className="space-y-6 ">
+          <div className="space-y-6 md:grid md:grid-cols-2 gap-6">
             {utilityPageSections.map((section, idx) => {
               return (
                 <ScrollReveal key={section.src} delay={0.05 * idx}>
@@ -143,13 +144,13 @@ export default function Home() {
         <div className="p-4 space-y-10">
           <div className="flex flex-col pt-20 items-center justify-center gap-6 ">
             <ScrollReveal delay={1}>
-              <h2 className="text-3xl font-semibold">
+              <h2 className="text-3xl md:text-5xl font-semibold">
                 The Techpool X Webflow Template also comes with more
                 surprises...
               </h2>
             </ScrollReveal>
           </div>
-          <div className="space-x-6">
+          <div className="space-y-6">
             {Templates.map((template, idx) => (
               <ScrollReveal key={idx} delay={0.5}>
                 <TemplateCard
@@ -161,13 +162,19 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="m-4">
-          <WebflowCard />
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="m-4 md:m-0">
+            <ScrollReveal delay={0.2}>
+              <WebflowCard />
+            </ScrollReveal>
+          </div>
+          <div className="m-4 md:m-0">
+            <ScrollReveal delay={0.2}>
+              <AllTemplateCard />
+            </ScrollReveal>
+          </div>
         </div>
-        <div className="m-4">
-          <AllTemplateCard />
-        </div>
-        <div className="py-20 mx-4">
+        <div className="py-20 mx-4 md:text-xl">
           <div className="space-y-6 my-10">
             <Image
               height={200}
@@ -182,39 +189,46 @@ export default function Home() {
               tempor incididunt labore et magna
             </p>
           </div>
-          <div className="my-10">
-            <h2 className="font-bold text-lg">Menu</h2>
-            <div className="grid grid-cols-2 my-8  gap-4">
-              {menuOptions.map((option) => (
-                <p key={option}>{option}</p>
-              ))}
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="my-10">
+              <h2 className="font-bold ">Menu</h2>
+              <div className="grid grid-cols-2 my-8  gap-4">
+                {menuOptions.map((option) => (
+                  <ScrollReveal key={option} delay={0.2}>
+                    <p key={option}>{option}</p>
+                  </ScrollReveal>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="my-10">
-            <h2 className="font-bold text-lg">Utility Page</h2>
-            <div className="grid grid-cols-1 my-8 gap-4">
-              {utilityOptions.map((option) => (
-                <p key={option}>{option}</p>
-              ))}
-              <a
-                href="/"
-                className="text-lg font-semibold text-primary underline"
-              >
-                More Webflow Templates
-              </a>
-            </div>
-          </div>
-          <div className="my-10">
-            <h2 className="font-bold text-lg">Follow Us</h2>
-            <div className="grid grid-cols-1 my-8 gap-4">
-              {followOptions.map((option) => (
-                <div key={option.label} className="flex gap-2 my-2">
-                  <Button size={"icon"} variant={"secondary"}>
-                    {option.icon}
-                  </Button>
-                  <span>{option.label}</span>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div className="my-10">
+                <h2 className="font-bold ">Utility Page</h2>
+                <div className="grid grid-cols-1 my-8 gap-4">
+                  {utilityOptions.map((option) => (
+                    <ScrollReveal key={option} delay={0.2}>
+                      <p key={option}>{option}</p>
+                    </ScrollReveal>
+                  ))}
+                  <a href="/" className=" font-semibold text-primary underline">
+                    More Webflow Templates
+                  </a>
                 </div>
-              ))}
+              </div>
+              <div className="my-10">
+                <h2 className="font-bold ">Follow Us</h2>
+                <div className="grid grid-cols-1 my-8 gap-4">
+                  {followOptions.map((option) => (
+                    <ScrollReveal key={option.label} delay={0.2}>
+                      <div key={option.label} className="flex gap-2 my-2">
+                        <Button size={"icon"} variant={"secondary"}>
+                          {option.icon}
+                        </Button>
+                        <span>{option.label}</span>
+                      </div>
+                    </ScrollReveal>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

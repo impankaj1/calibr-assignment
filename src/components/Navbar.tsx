@@ -21,8 +21,8 @@ const Navbar = () => {
 
   return (
     <nav className=" w-full  bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60  top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-        <div className="flex justify-between h-24 items-end ">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 ">
+        <div className="flex justify-between h-24 items-end lg:items-center">
           {/* Logo/Brand */}
           <div className="flex gap-8">
             <Link
@@ -38,7 +38,7 @@ const Navbar = () => {
                 alt="Techpool Logo"
               />{" "}
             </Link>
-            <div className="lg:flex gap-4 hidden text-xl font-medium">
+            <div className="lg:flex gap-4 hidden text-lg font-medium text-gray-500">
               <h2>Home</h2>
               <h2>About</h2>
               <h2>Pricing</h2>
