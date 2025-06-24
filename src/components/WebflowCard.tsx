@@ -16,7 +16,7 @@ const WebflowCard = () => {
           alt="figma icon"
           height={60}
           width={60}
-          className="m-4 rounded-2xl object-cover w-[240px] h-[240px]
+          className="m-4 rounded-2xl object-cover w-[60px] h-[60px]
     md:w-[100px] md:h-[100px]"
         />
         <div className="m-4 space-y-4">
